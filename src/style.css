@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #aaa;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  padding: 0px 50px;
+  background-color: #333;
+  color: white;
+}
+ul {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+}
+li > a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.25rem;
+}
+.hero,
+.about-me,
+.skills,
+.projects,
+.contact-me {
+  scroll-margin-top: 80px;
+  border-bottom: #333 2px solid;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.hero {
+  min-height: 100vh;
+
+  justify-content: center;
+}
+.hero__top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.hero__img__container {
+  width: 500px;
+  height: 500px;
+  box-shadow: 12px -12px 5px rgba(0, 0, 0, 0.3);
+}
+.hero__name {
+  font-size: 8rem;
+}
+.hero__work {
+  font-size: 4.5rem;
+}
+.hero__img__container,
+.hero__img__container > img {
+  border-radius: 250px;
+}
+.hero__img__container > img {
+  width: 100%;
+  height: 100%;
+}
+.hero__img__container {
+  border: 2px solid #333;
+}
+.hero__know-more {
+  display: flex;
+  font-size: 25px;
+  justify-content: baseline;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: #ddd;
+  border: 1px solid #333;
+  transition: 0.5s ease;
+}
+.hero__know-more:hover {
+  background-color: #333;
+  color: #ddd;
+}
+.hero__know-more:hover > svg {
+  fill: #ddd;
+  transition: 0.5s ease;
+  transform: rotate(360deg);
+}
+.hero__know-more > svg {
+  height: 25px;
+}
+.section__header {
+  font-size: 3rem;
+}
