@@ -1,4 +1,4 @@
-import "./style.css";
+import "./style.scss";
 
 const knowMe = document.querySelector(".hero__know-more");
 knowMe.addEventListener("click", () => {

@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+$dark-color: #333;
+$medium-color: #aaa;
+$light-color: #ddd;
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +12,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: #aaa;
+  background-color: $medium-color;
   font-family: "Roboto", sans-serif;
 }
 
@@ -20,26 +24,28 @@ header {
   width: 100%;
   height: 80px;
   padding: 0px 50px;
-  background-color: #333;
+  background-color: $dark-color;
   color: white;
+  ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    li > {
+      a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 1.25rem;
+      }
+    }
+  }
 }
-ul {
-  display: flex;
-  list-style-type: none;
-  gap: 20px;
-}
-li > a {
-  text-decoration: none;
-  color: inherit;
-  font-size: 1.25rem;
-}
+
 .hero,
 .about-me,
 .skills,
 .projects,
 .contact-me {
-  scroll-margin-top: 80px;
-  border-bottom: #333 2px solid;
+  border-bottom: $dark-color 2px solid;
   min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
@@ -48,7 +54,6 @@ li > a {
 }
 .hero {
   min-height: 100vh;
-
   justify-content: center;
 }
 .hero__top {
@@ -72,12 +77,15 @@ li > a {
 .hero__img__container > img {
   border-radius: 250px;
 }
-.hero__img__container > img {
-  width: 100%;
-  height: 100%;
-}
 .hero__img__container {
-  border: 2px solid #333;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.hero__img__container {
+  border: 2px solid $dark-color;
 }
 .hero__know-more {
   display: flex;
@@ -89,22 +97,23 @@ li > a {
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  background-color: #ddd;
-  border: 1px solid #333;
+  background-color: $light-color;
+  border: 1px solid $dark-color;
   transition: 0.5s ease;
+  svg {
+    height: 25px;
+  }
+  &:hover {
+    background-color: $dark-color;
+    color: $light-color;
+    svg {
+      fill: $light-color;
+      transition: 0.5s ease;
+      transform: rotate(360deg);
+    }
+  }
 }
-.hero__know-more:hover {
-  background-color: #333;
-  color: #ddd;
-}
-.hero__know-more:hover > svg {
-  fill: #ddd;
-  transition: 0.5s ease;
-  transform: rotate(360deg);
-}
-.hero__know-more > svg {
-  height: 25px;
-}
+
 .section__header {
   font-size: 3rem;
 }
