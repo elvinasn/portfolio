@@ -3,6 +3,42 @@ $dark-color: #333;
 $medium-color: #aaa;
 $light-color: #ddd;
 
+@keyframes shake {
+  0% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, -4px) rotate(-2deg);
+  }
+  20% {
+    transform: translate(-6px, 0px) rotate(2deg);
+  }
+  30% {
+    transform: translate(6px, 4px) rotate(0deg);
+  }
+  40% {
+    transform: translate(2px, -2px) rotate(2deg);
+  }
+  50% {
+    transform: translate(-2px, 4px) rotate(-2deg);
+  }
+  60% {
+    transform: translate(-6px, 2px) rotate(0deg);
+  }
+  70% {
+    transform: translate(6px, 2px) rotate(-2deg);
+  }
+  80% {
+    transform: translate(-2px, -2px) rotate(2deg);
+  }
+  90% {
+    transform: translate(2px, 4px) rotate(0deg);
+  }
+  100% {
+    transform: translate(2px, -4px) rotate(0deg);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +62,7 @@ header {
   padding: 0px 50px;
   background-color: $dark-color;
   color: white;
+  z-index: 1;
   ul {
     display: flex;
     list-style-type: none;
@@ -45,6 +82,7 @@ header {
 .skills,
 .projects,
 .contact-me {
+  scroll-margin-top: 80px;
   border-bottom: $dark-color 2px solid;
   min-height: calc(100vh - 80px);
   display: flex;
@@ -99,16 +137,18 @@ header {
   cursor: pointer;
   background-color: $light-color;
   border: 1px solid $dark-color;
-  transition: 0.5s ease;
+  transition: 0.4s ease;
   svg {
     height: 25px;
   }
   &:hover {
     background-color: $dark-color;
     color: $light-color;
+    box-shadow: 0px 0px 5px $dark-color;
+    transform: scale(1.05);
     svg {
       fill: $light-color;
-      transition: 0.5s ease;
+      transition: 0.4s ease;
       transform: rotate(360deg);
     }
   }
@@ -116,4 +156,54 @@ header {
 
 .section__header {
   font-size: 3rem;
+}
+
+.skills__images {
+  display: flex;
+  padding: 20px 0;
+  margin: auto auto;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 100px;
+  img {
+    width: 200px;
+    height: 200px;
+
+    &:hover {
+      animation: shake 0.5s 1;
+    }
+  }
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  width: 180px;
+  bottom: 110%;
+  left: 50%;
+  margin-left: -90px;
+}
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
